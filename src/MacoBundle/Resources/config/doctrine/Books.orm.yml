@@ -1,0 +1,20 @@
+MacoBundle\Entity\Books:
+    type: entity
+    table: null
+    repositoryClass: MacoBundle\Repository\BooksRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        author:
+            type: string
+            length: 255
+        quantity:
+            type: integer
+    lifecycleCallbacks: {  }

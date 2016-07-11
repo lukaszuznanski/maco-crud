@@ -1,0 +1,3 @@
+maco_homepage:
+    path:     /
+    defaults: { _controller: MacoBundle:Home:index }

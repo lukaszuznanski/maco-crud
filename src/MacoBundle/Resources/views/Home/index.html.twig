@@ -1,0 +1,10 @@
+{% extends 'MacoBundle::layout.html.twig' %}
+    {% block table %}
+        {% for book in book %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.quantity }}</td>
+            </tr>
+        {% endfor %}
+    {% endblock %}

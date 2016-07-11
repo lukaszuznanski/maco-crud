@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class UpdatebookController extends Controller
 {
@@ -39,7 +40,7 @@ class UpdatebookController extends Controller
             ->add('title', ChoiceType::class, array('choices' => array_flip($bookChoices),'label' => 'Tytuł'))
             ->add('newtitle', TextType::class, array('label' => 'Nowy tytuł', 'mapped' => false))
             ->add('newauthor', TextType::class, array('label' => 'Nowy autor', 'mapped' => false))
-            ->add('newquantity', TextType::class, array('label' => 'Nowa ilość magazynowa', 'mapped' => false))
+            ->add('newquantity', IntegerType::class, array('label' => 'Nowa ilość magazynowa', 'mapped' => false))
             ->add('save', SubmitType::class, array('label' => 'Wyślij'))
             ->getForm();
 

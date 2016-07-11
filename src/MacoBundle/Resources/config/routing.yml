@@ -7,3 +7,6 @@ maco_addbook:
 maco_book:
     path:     /book/{slug}
     defaults: { _controller: MacoBundle:Book:index }
+maco_updatebook:
+    path:     /update
+    defaults: { _controller: MacoBundle:Updatebook:index }

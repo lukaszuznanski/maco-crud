@@ -22,8 +22,8 @@ class BookController extends Controller
             );
         }
 
+        //formularz do usuwania książki
         $bookDelete = new Books();
-
         $form = $this->createFormBuilder($bookDelete)
             ->add('save', SubmitType::class, array('label' => 'Usuń'))
             ->getForm();

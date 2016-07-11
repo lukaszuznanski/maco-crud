@@ -1,3 +1,9 @@
 maco_homepage:
     path:     /
     defaults: { _controller: MacoBundle:Home:index }
+maco_addbook:
+    path:     /addbook
+    defaults: { _controller: MacoBundle:Addbook:index }
+maco_book:
+    path:     /book/{slug}
+    defaults: { _controller: MacoBundle:Book:index }

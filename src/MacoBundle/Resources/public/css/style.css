@@ -1,0 +1,17 @@
+#main{
+    margin-top:250px;
+}
+#booksTable{
+    margin:0 auto;
+}
+td{
+    width:150px;
+}
+.addForm{
+    text-align:center;
+    width:200px;
+    margin:0 auto;
+}
+#booksPage{
+    text-align:center;
+}

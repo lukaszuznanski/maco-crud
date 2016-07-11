@@ -1,10 +1,19 @@
 {% extends 'MacoBundle::layout.html.twig' %}
-    {% block table %}
-        {% for book in book %}
-            <tr>
-                <td>{{ book.title }}</td>
-                <td>{{ book.author }}</td>
-                <td>{{ book.quantity }}</td>
-            </tr>
-        {% endfor %}
+    {% block main %}
+        <table id="booksTable">
+            <thead>
+                <th>Tytuł</th>
+                <th>Autor</th>
+                <th>Ilość w magazynie</th>
+            </thead>
+             <tbody>
+            {% for book in book %}
+                <tr>
+                    <td><a href="{{ path('maco_book', {'slug' : book.title }) }}">{{ book.title }}</a></td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.quantity }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     {% endblock %}

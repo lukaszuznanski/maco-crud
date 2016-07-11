@@ -1,0 +1,9 @@
+{% extends 'MacoBundle::layout.html.twig' %}
+    {% block main %}
+        <div id="booksPage">
+            Tytuł: {{ book[0].title }}<br>
+            Autor: {{ book[0].author }}<br>
+            Ilość w magazynie: {{ book[0].quantity }}
+        </div>
+
+    {% endblock %}

@@ -2,28 +2,42 @@
         <head>
             <title>{% block title %}{% endblock %}</title>
             <meta charset="utf-8">
+            {% block stylesheets %}
+                {% stylesheets '@MacoBundle/Resources/public/css/*' %}
+                    <link rel="stylesheet" href="{{ asset_url }}">
+                {% endstylesheets %}
+            {% endblock %}
         </head>
         <body>
             <header>
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">Maco CRUD</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ path('maco_homepage') }}">Home</a></li>
+                            <li><a href="{{ path('maco_addbook') }}">Dodaj nową książkę</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                        </ul>
+                    </div>
+                </nav>
                 {% block header %} {% endblock %}
             </header>
             <section id="main">
-                <table>
-                    <thead>
-                        <th>Tytuł</th>
-                        <th>Autor</th>
-                        <th>Ilość w magazynie</th>
-                    </thead>
-                    <tbody>
-                        {% block table %} {% endblock %}
-                    </tbody>
-                </table>
+                        {% block main %} {% endblock %}
             </section>
             <footer>
                 {% block footer %}{% endblock %}
                 <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
                 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+                {% block javascripts %}
+                    {% javascripts '@MacoBundle/Resources/public/js/*' %}
+                        <script src="{{ asset_url }}" type="text/javascript"></script>
+                    {% endjavascripts %}
+                {% endblock %}
             </footer>
         </body>
 </html>
